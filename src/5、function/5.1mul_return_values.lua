@@ -72,4 +72,23 @@ print(foo(3))        -- (no results)
 print((foo0()))      --> nil
 print((foo1()))      --> a
 print((foo2()))      --> a
+-- 一个return语句如果使用圆括号将返回值括起来也将导致返回一个值。
 
+--[[
+函数多值返回的特殊函数unpack，接受一个数组作为输入参数，返回数组的所有元素。
+unpack被用来实现范型调用机制，在C语言中可以使用函数指针调用可变的函数，可以声明参数可变的函数，但不能两者同时可变。
+在Lua中如果你想调用可变参数的可变函数只需要这样：
+f(unpack(a))
+--]]
+-- unpack返回a所有的元素作为f()的参数
+f = string.find
+a = {"hello", "ll"}
+print(f(unpack(a)))      --> 3  4
+
+-- 预定义的unpack函数是用C语言实现的，我们也可以用Lua来完成：
+function unpack(t, i)
+    i = i or 1
+    if t[i] then
+       return t[i], unpack(t, i + 1)
+    end
+end

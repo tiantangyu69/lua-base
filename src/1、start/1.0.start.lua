@@ -1,7 +1,7 @@
--- Ğ´Ò»¸ö×î¼òµ¥µÄ³ÌĞò£¬Hello World
+-- å†™ä¸€ä¸ªæœ€ç®€å•çš„ç¨‹åºï¼ŒHello World
 print("Hello World")
 
--- ¼ÆËãÊäÈë²ÎÊınµÄ½×³Ë£»±¾ÀıÒªÇóÓÃ»§ÊäÈëÒ»¸öÊı×Ön£¬È»ºó´òÓ¡nµÄ½×³Ë
+-- è®¡ç®—è¾“å…¥å‚æ•°nçš„é˜¶ä¹˜ï¼›æœ¬ä¾‹è¦æ±‚ç”¨æˆ·è¾“å…¥ä¸€ä¸ªæ•°å­—nï¼Œç„¶åæ‰“å°nçš„é˜¶ä¹˜
 -- defines a factorial function
 function fact(n)
 	if n == 0 then
@@ -15,7 +15,7 @@ print("enter a number: ")
 a = io.read("*number")
 print(fact(a))
 
--- ¶ÁÈ¡ÊäÈë
+-- è¯»å–è¾“å…¥
 line = io.read()
 n = tonumber(line)
 if n == nil then
